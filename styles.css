@@ -36,7 +36,8 @@ body {
     font-size: 1.3em;
 }
 
-#new-task-btn {
+#new-task-btn,
+.modal-button {
     padding: 0.5em;
     color: white;
     background-color: var(--footer-bg);
@@ -46,10 +47,14 @@ body {
     margin-top: 3px;
 }
 
-#new-task-btn:hover {
+#new-task-btn:hover,
+.modal-button:hover {
     box-shadow: 1px 1px 3px black;
     cursor: pointer;
-    transform: scale(1.05);
+}
+
+#new-task-btn:hover {
+    transform: scale(1.15);
 }
 
 .header img {
@@ -104,7 +109,9 @@ body {
     background-color: var(--body-bg);
     padding: 1em;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
     box-shadow: inset 2px 2px 3px black;
 }
 
@@ -112,13 +119,32 @@ body {
     border: 2px solid #eae4ea;
     border-radius: 10px;
     width: 95%;
-    height: 3em;
+    height: 2.5em;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5em;
     font-size: 1.1em;
     background-color: var(--bg-background);
+}
+
+.todo-display .material-symbols-rounded {
+    display: inline;
+    vertical-align: bottom;
+}
+
+.edit-button {
+    padding-bottom: 3px;
+}
+
+.delete-button {
+    padding-top: 1px;
+}
+
+.delete-button:hover,
+.edit-button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
 .todo-display button {
@@ -138,6 +164,7 @@ body {
     display: flex;
     gap: 1em;
     align-items: center;
+    justify-content: center;
 }
 
 .todo-display:hover {
@@ -196,4 +223,69 @@ body {
 .checkbox-label input:checked~span {
     color: rgb(138, 137, 137);
     text-decoration: line-through;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.new-todo-modal-content {
+    background-color: var(--bg-background);
+    margin: 10% auto;
+    padding: 2em;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 25em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.292);
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: .75em;
+    align-items: center;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 2em;
+}
+
+.modal input,
+.modal textarea,
+.modal select {
+    padding: 0.5em;
+    width: 20em;
+    border: 1px solid #afabaf;
+    font-family: inherit;
+    font-size: 0.85em;
+}
+
+.input-group {
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal select {
+    width: 21em;
+}
+
+.new-project-input {
+    display: block;
 }

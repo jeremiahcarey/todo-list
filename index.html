@@ -52,22 +52,43 @@
                 </div>
             </div>
             <div class="todos-container">
-                <div class="todo-display">
-                    <div class="todo-display-left">
-                        <label class="checkbox-label"><input type="checkbox" /><span
-                                class="todo-checkbox"></span><span>Example Task</span>
-                        </label>
-                    </div>
-                    <div class="todo-display-right"><button type="button" class="todo-details">Details</button>
-                        2025-05-05 <span class="material-symbols-rounded">
-                            edit_square
-                        </span> <span class="material-symbols-rounded">
-                            delete
-                        </span></div>
-                </div>
             </div>
         </div>
     </div>
+
+    <div id="add-todo-modal" class="modal">
+        <div class="new-todo-modal-content">
+            <form id="add-book-form" action="javascript:void(0);"">
+                <div>
+                    <input class=" input" type="text" id="name" name="name" placeholder="Task Name" required
+                max-lenth="150">
+        </div>
+        <div>
+            <textarea class="input" id="details" name="details" rows="5" cols="20"
+                placeholder="Details or notes go here."></textarea>
+        </div>
+        <div class="input-group">
+            <label for="due-date">Due date:</label><input class="input" type="date" id="due-date" name="due-date">
+        </div>
+        <div class="input-group">
+            <label for="project-select">Project:</label>
+            <select name="project-select" id="project-select">
+                <option value="new-project">New Project</option>
+                <option value="uncategorized">Uncategorized</option>
+            </select>
+        </div>
+        <div class="new-project-input">
+            <input class="input" type="text" id="new-project-name" name="new-project-name"
+                placeholder="New Project Name">
+        </div>
+        <div class="modal-buttons">
+            <button class="modal-button submit-new-task" type="submit">Add Task</button><button type="button"
+                class="modal-button cancel-new-task">Cancel</button>
+        </div>
+        </form>
+    </div>
+    </div>
+
 
     <script src="index.js"></script>
 </body>
