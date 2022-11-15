@@ -28,14 +28,14 @@
                 <div class="menu">
                     <div class="shortcuts">
                         <h2>Shortcuts</h2>
-                        <ul>
-                            <li><span class="material-symbols-rounded">
+                        <ul class="shortcuts-menu">
+                            <li class="display-all-tasks"><span class="material-symbols-rounded">
                                     list_alt
                                 </span> All Tasks</li>
-                            <li><span class="material-symbols-rounded">
-                                    emergency_home
-                                </span> Due Soon</li>
-                            <li><span class="material-symbols-rounded">
+                            <li class="due-soon"><span class="material-symbols-rounded">
+                                    sort
+                                </span> Next Tasks Due</li>
+                            <li class="completed-tasks"><span class="material-symbols-rounded">
                                     task_alt
                                 </span> Completed</li>
                         </ul>
@@ -52,34 +52,36 @@
                 </div>
             </div>
             <div class="todos-container">
+
             </div>
         </div>
     </div>
 
     <div id="add-todo-modal" class="modal">
-        <div class="new-todo-modal-content">
-            <form id="add-book-form" action="javascript:void(0);"">
+        <div class="new-todo-modal-content modal-content">
+            <form id="add-task-form" action="javascript:void(0);"">
                 <div>
-                    <input class=" input" type="text" id="name" name="name" placeholder="Task Name" required
+                    <input class=" input" type="text" id="name-new" name="name" placeholder="Task Name" required
                 max-lenth="150">
         </div>
         <div>
-            <textarea class="input" id="details" name="details" rows="5" cols="20"
+            <textarea class="input" id="details-new" name="details" rows="5" cols="20"
                 placeholder="Details or notes go here."></textarea>
         </div>
         <div class="input-group">
-            <label for="due-date">Due date:</label><input class="input" type="date" id="due-date" name="due-date">
+            <label for="due-date-new">Due date:</label><input class="input" type="date" id="due-date-new"
+                name="due-date">
         </div>
         <div class="input-group">
             <label for="project-select">Project:</label>
             <select name="project-select" id="project-select">
-                <option value="new-project">New Project</option>
-                <option value="uncategorized">Uncategorized</option>
+                <option class="new-task-project" value="new-project">New Project</option>
+                <option class="new-task-project" id="uncategorized-option" value="uncategorized">Uncategorized</option>
             </select>
         </div>
         <div class="new-project-input">
             <input class="input" type="text" id="new-project-name" name="new-project-name"
-                placeholder="New Project Name">
+                placeholder="New Project Name" required>
         </div>
         <div class="modal-buttons">
             <button class="modal-button submit-new-task" type="submit">Add Task</button><button type="button"
@@ -87,6 +89,33 @@
         </div>
         </form>
     </div>
+    </div>
+    <div id="details-modal" class="modal">
+        <div class="details-modal-content modal-content">
+            <div class="details-name details-group">
+                <div class="details-name-title details-title">Task Name:</div>
+                <div class="details-name-name details-data"></div>
+            </div>
+            <div class="details-details details-group">
+                <div class="details-details-title details-title">Details:</div>
+                <div class="details-details-details details-data"></div>
+            </div>
+            <div class="details-date details-group">
+                <div class="details-date-title details-title">Due Date:</div>
+                <div class="details-date-date details-data"></div>
+            </div>
+            <div class="details-project details-group">
+                <div class="details-project-title details-title">Project:</div>
+                <div class="details-project-project details-data"></div>
+            </div>
+            <div class="details-completed details-group">
+                <div class="details-completed-title details-title">Completed:</div>
+                <div class="details-completed-completed details-data"></div>
+            </div>
+            <div class="details-buttons">
+                <button class="modal-button" id="details-close-button">Close</button>
+            </div>
+        </div>
     </div>
 
 

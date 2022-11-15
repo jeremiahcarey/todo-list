@@ -96,6 +96,12 @@ body {
     list-style: none;
 }
 
+.shortcuts-menu>li:hover,
+.project-list>li:hover {
+    cursor: pointer;
+    text-shadow: 1px 1px 2px black;
+}
+
 .info-footer {
     background-color: var(--footer-bg);
     border-top: 2px solid var(--bg-background);
@@ -108,11 +114,13 @@ body {
     width: 75%;
     background-color: var(--body-bg);
     padding: 1em;
+    padding-top: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1em;
     box-shadow: inset 2px 2px 3px black;
+    overflow: auto;
 }
 
 .todo-display {
@@ -128,7 +136,12 @@ body {
     background-color: var(--bg-background);
 }
 
-.todo-display .material-symbols-rounded {
+.date-display {
+    font-size: 0.75em;
+}
+
+.todo-display .material-symbols-rounded,
+.sort-option .material-symbols-rounded {
     display: inline;
     vertical-align: bottom;
 }
@@ -164,26 +177,18 @@ body {
     display: flex;
     gap: 1em;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .todo-display:hover {
     background-color: #f6eef6
 }
 
-.todo-display-left input[type="checkbox"] {
-    cursor: pointer;
-    opacity: 0;
-    position: absolute;
-    height: 0;
-    width: 0;
-}
 
 .checkbox-label {
     display: block;
     position: relative;
     padding-left: 2em;
-    cursor: pointer;
 }
 
 .todo-checkbox {
@@ -196,21 +201,19 @@ body {
     border: .075em solid black;
     border-radius: .2em;
     background-color: #eee;
+    cursor: pointer;
 }
 
-.todo-checkbox label {
-    padding-left: 35px;
-}
 
-.checkbox-label:hover input~.todo-checkbox {
+todo-checkbox {
     background-color: #ccc;
 }
 
-.checkbox-label input:checked~.todo-checkbox {
+.todo-checked {
     background-color: #52b69a;
 }
 
-.checkbox-label input:checked~.todo-checkbox:after {
+.todo-checked::after {
     font-family: "Material Symbols Rounded";
     font-size: 1em;
     content: "\e5ca";
@@ -220,7 +223,7 @@ body {
     left: 0;
 }
 
-.checkbox-label input:checked~span {
+.checked-name {
     color: rgb(138, 137, 137);
     text-decoration: line-through;
 }
@@ -252,6 +255,37 @@ body {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.292);
 }
 
+.details-modal-content {
+    background-color: var(--bg-background);
+    margin: 10% auto;
+    padding: 2em;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 25em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+    justify-content: center;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.292);
+}
+
+.details-group {
+    width: 23em;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.details-title {
+    font-weight: bold;
+}
+
+.details-data {
+    width: 65%;
+}
+
+
 .modal form {
     display: flex;
     flex-direction: column;
@@ -262,6 +296,10 @@ body {
 .modal-buttons {
     display: flex;
     gap: 2em;
+}
+
+.details-buttons {
+    margin: 0 auto;
 }
 
 .modal input,
