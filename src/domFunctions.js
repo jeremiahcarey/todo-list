@@ -157,9 +157,9 @@ function showDetails(e) {
     nodes.detailsDate.innerText = todos[taskIndex].date.toLocaleDateString("fr-CA", { timeZone: "UTC" });
     nodes.detailsProject.innerText = todos[taskIndex].project;
     if (todos[taskIndex].completed === true) {
-        detailsCompleted.innerText = "Yes";
+        nodes.detailsCompleted.innerText = "Yes";
     } else {
-        detailsCompleted.innerText = "No";
+        nodes.detailsCompleted.innerText = "No";
     }
 }
 
