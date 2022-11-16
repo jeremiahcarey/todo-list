@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Vanilla Todo</title>
+</head>
+
+<body>
+    <div class="bg-container">
+        <div class="header">
+            <div class="header-logo">
+                <h1><img src="img/logo-check.png" alt="image of checked box"> Vanilla Todo
+                    List
+                </h1>
+            </div>
+            <div class="new-task"><button type="button" id="new-task-btn">New Task</button></div>
+        </div>
+
+        <div class="main-container">
+            <div class="left-container">
+                <div class="menu">
+                    <div class="shortcuts">
+                        <h2>Shortcuts</h2>
+                        <ul class="shortcuts-menu">
+                            <li class="display-all-tasks"><span class="material-symbols-rounded">
+                                    list_alt
+                                </span> All Tasks</li>
+                            <li class="due-soon"><span class="material-symbols-rounded">
+                                    sort
+                                </span> Next Tasks Due</li>
+                            <li class="completed-tasks"><span class="material-symbols-rounded">
+                                    task_alt
+                                </span> Completed</li>
+                        </ul>
+                    </div>
+                    <div class="projects">
+                        <h2>Projects</h2>
+                        <ul class="project-list">
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="info-footer">
+                    <p>Copyright Jeremiah616, for The Odin Project 2022</p>
+                </div>
+            </div>
+            <div class="todos-container">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="add-todo-modal" class="modal">
+        <div class="new-todo-modal-content modal-content">
+            <form id="add-task-form" action="javascript:void(0);"">
+                <div>
+                    <input class=" input" type="text" id="name-new" name="name" placeholder="Task Name" required
+                max-lenth="150">
+        </div>
+        <div>
+            <textarea class="input" id="details-new" name="details" rows="5" cols="20"
+                placeholder="Details or notes go here."></textarea>
+        </div>
+        <div class="input-group">
+            <label for="due-date-new">Due date:</label><input class="input" type="date" id="due-date-new"
+                name="due-date">
+        </div>
+        <div class="input-group">
+            <label for="project-select">Project:</label>
+            <select name="project-select" id="project-select">
+                <option class="new-task-project" value="new-project">New Project</option>
+                <option class="new-task-project" id="uncategorized-option" value="uncategorized">Uncategorized</option>
+            </select>
+        </div>
+        <div class="new-project-input">
+            <input class="input" type="text" id="new-project-name" name="new-project-name"
+                placeholder="New Project Name" required>
+        </div>
+        <div class="modal-buttons">
+            <button class="modal-button submit-new-task" type="submit">Add Task</button><button type="button"
+                class="modal-button cancel-new-task">Cancel</button>
+        </div>
+        </form>
+    </div>
+    </div>
+    <div id="details-modal" class="modal">
+        <div class="details-modal-content modal-content">
+            <div class="details-name details-group">
+                <div class="details-name-title details-title">Task Name:</div>
+                <div class="details-name-name details-data"></div>
+            </div>
+            <div class="details-details details-group">
+                <div class="details-details-title details-title">Details:</div>
+                <div class="details-details-details details-data"></div>
+            </div>
+            <div class="details-date details-group">
+                <div class="details-date-title details-title">Due Date:</div>
+                <div class="details-date-date details-data"></div>
+            </div>
+            <div class="details-project details-group">
+                <div class="details-project-title details-title">Project:</div>
+                <div class="details-project-project details-data"></div>
+            </div>
+            <div class="details-completed details-group">
+                <div class="details-completed-title details-title">Completed:</div>
+                <div class="details-completed-completed details-data"></div>
+            </div>
+            <div class="details-buttons">
+                <button class="modal-button" id="details-close-button">Close</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
