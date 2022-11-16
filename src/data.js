@@ -15,7 +15,8 @@ class Todo {
         this.name = name;
         this.description = description;
         this.project = project;
-        this.date = new Date(date);
+        if (date) { this.date = new Date(date) }
+        else { this.date = undefined };
         this.completed = completed;
     }
     addToTodos() {
