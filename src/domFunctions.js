@@ -199,7 +199,7 @@ function updateProjectOptions() {
             const projectOption = document.createElement("option");
             projectOption.classList.add("new-task-project");
             projectOption.innerText = project;
-            projectSelector.appendChild(projectOption);
+            nodes.projectSelector.appendChild(projectOption);
         }
     })
     nodes.newProjectInput.style.display = "block";
